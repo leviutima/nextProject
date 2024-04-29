@@ -1,0 +1,43 @@
+.articleContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerContainer {
+    background-color: gray;
+    border-radius: 8px 8px 0 0;
+    width: 438px;
+}
+
+.sectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    background-color: #171D1F;
+    width:438px;
+}
+
+.textContainer {
+    margin: 3px 16px 16px 16px;
+    color: #BCBCBC;
+}
+
+.footerContainer {
+    background-color: #171D1F;
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    justify-content: end;
+    color: #BCBCBC;
+    font-weight: 600;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 95px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}

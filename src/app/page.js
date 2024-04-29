@@ -14,8 +14,6 @@ const post = {
     "avatar": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/authors/anabeatriz_dev.png"
   }
 }
-
-
 export default function Home() {
   return (
     <main>
