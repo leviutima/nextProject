@@ -1,6 +1,7 @@
 import { CardPost } from "@/components/CardPost/Index";
 import logger from "@/logger";
 import style from './page.module.css'
+import Link from "next/link";
 
 const post = {
     "id": 1,
@@ -17,8 +18,8 @@ const post = {
   }
 }
 
-async function getAllPost () {
-  const response = await fetch('http://localhost:3042/posts')
+async function getAllPost (page) {
+  const response = await fetch(`http://localhost:3042/posts?_page=${page}&_per_page=6`)
   if (!response.ok) {
     logger.error('Ops, alguma coisa correu mal.')
     return []
@@ -28,11 +29,14 @@ async function getAllPost () {
 }
 
 
-export default async function Home() {
-  const posts  = await getAllPost()
+export default async function Home({ searchParams }) {
+  const currentPage = searchParams?.page || 1
+  const { data: posts, prev, next }  = await getAllPost(currentPage)
   return (
     <main className={style.mainContainer}>
-      {posts.map(post => <CardPost post={post}/>)}
+      {posts.map(post => <CardPost key={post.id} post={post}/>)}
+      {prev && <Link href={`/?page=${prev}`}>Página anterior</Link>}
+      {next && <Link href={`/?page=${next}`}>Próxima página</Link>}
     </main>
   );
 }

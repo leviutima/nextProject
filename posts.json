@@ -73,7 +73,7 @@
         {
             "id": 6,
             "cover": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/posts/otimizacao-de-performance-no-react.png",
-            "title": "Otimização de Performance no React",
+            "title": "Otimização de Performance React",
             "slug": "otimizacao-de-performance-no-react",
             "body": "Discutindo técnicas avançadas para otimizar a performance de aplicações React, este post aborda conceitos como memoização e lazy loading.",
             "markdown": "```javascript\nconst MemoizedComponent = React.memo(function MyComponent(props) {\n  /* render using props */\n});\n```",
