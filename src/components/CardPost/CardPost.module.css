@@ -9,6 +9,16 @@
     width: 438px;
 }
 
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 95px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
 .sectionContainer {
     display: flex;
     flex-direction: column;
@@ -32,12 +42,6 @@
     font-weight: 600;
 }
 
-.image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 360px;
-    height: 95px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+.avatarContainer {
+    margin: 0 16px 0 0 ;
 }

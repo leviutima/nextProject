@@ -1,4 +1,6 @@
 import { CardPost } from "@/components/CardPost/Index";
+import logger from "@/logger";
+import style from './page.module.css'
 
 const post = {
     "id": 1,
@@ -14,10 +16,23 @@ const post = {
     "avatar": "https://raw.githubusercontent.com/viniciosneves/code-connect-assets/main/authors/anabeatriz_dev.png"
   }
 }
-export default function Home() {
+
+async function getAllPost () {
+  const response = await fetch('http://localhost:3042/posts')
+  if (!response.ok) {
+    logger.error('Ops, alguma coisa correu mal.')
+    return []
+  }
+  logger.info('posts obtidos com sucesso')
+    return response.json()
+}
+
+
+export default async function Home() {
+  const posts  = await getAllPost()
   return (
-    <main>
-      <CardPost post={post}/>
+    <main className={style.mainContainer}>
+      {posts.map(post => <CardPost post={post}/>)}
     </main>
   );
 }

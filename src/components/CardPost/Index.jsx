@@ -17,10 +17,12 @@ export const CardPost = ({ post }) => {
                 </div>
             </section>
             <footer className={style.footerContainer}>
-                <Avatar 
-                    imageSrc={post.author.avatar} 
-                    name={post.author.username}
-                />
+                <div className={style.avatarContainer}>
+                    <Avatar 
+                        imageSrc={post.author.avatar} 
+                        name={post.author.username}
+                    />
+                </div>
             </footer>
         </article>
     )
