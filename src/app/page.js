@@ -35,8 +35,8 @@ export default async function Home({ searchParams }) {
   return (
     <main className={style.mainContainer}>
       {posts.map(post => <CardPost key={post.id} post={post}/>)}
-      {prev && <Link href={`/?page=${prev}`}>Página anterior</Link>}
-      {next && <Link href={`/?page=${next}`}>Próxima página</Link>}
+      {prev && <Link href={`/?page=${prev}`} className={style.linkStyle}>Página anterior</Link>}
+      {next && <Link href={`/?page=${next}`} className={style.linkStyle}>Próxima página</Link>}
     </main>
   );
 }
